@@ -9,12 +9,12 @@ class CreateUsersTable extends Migration {
 	{
 
 		Schema::create('Users', function(Blueprint $table) {
-      $table->increments('id');
+			$table->increments('id');
 			$table->string('name')->unique();
-		  $table->string('email')->unique();
-		  $table->string('password');
-      $table->timestamps();
-      $table->softDeletes();
+			$table->string('email')->unique();
+			$table->string('password');
+			$table->timestamps();
+			$table->softDeletes();
     });
 
     DB::table('Users')->insert( array(	'name' => 'demo',

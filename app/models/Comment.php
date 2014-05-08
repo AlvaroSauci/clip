@@ -1,6 +1,8 @@
 <?php
 class Comment extends Eloquent  {
  
+    protected $table = 'comments';
+
     public static function getValidator()
 	{
 		return array(   'message'                 => 'required|max:200' ) ;

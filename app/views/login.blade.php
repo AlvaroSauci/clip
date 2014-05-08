@@ -8,7 +8,14 @@
 		<a href="lang/es" > <img src = "./images/españa_icono.png" /> </a>
 		<a href="lang/en" > <img src = "./images/ingles_icono.png" /> </a>
 	</div>
-	
+
+	@if(Session::has('msg'))
+		<div class="alert alert-info container">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			{{ Session::get('msg') }}
+		</div>
+	@endif
+
 	<div class="col-md-4 col-md-offset-4 offset4 span4" >	
 		<div class="row">
 

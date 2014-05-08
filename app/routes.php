@@ -18,6 +18,8 @@ Route::get('/', array( 'as' => 'login', function()
 
 Route::post('login/check', array( 'as' => 'loginCheck', 'uses' => 'LoginController@check'));
 
+
+
 // Lang------------------------------------------------------------------------
 
 Route::get('lang/{lang}', array('as' => 'lang', function($lang)
@@ -35,11 +37,13 @@ Route::get('register',  array( 'as' => 'register', function()
 
 Route::post('register/check', array('as'=>'registerCheck', 'uses'=> 'RegisterController@check'));
 
-// Dashboard-------------------------------------------------------------------
+// Index------------------------------------------------------------------------
 
 Route::get('dashboard', ['before' => 'auth', function()
 {
 	return View::make('dashboard');
 }]);
 
-Route::post('dashboard/check', array('as'=>'dashboardCheck', 'uses'=>'DashboardController@check'));
+Route::post('dashboard/check', ['uses' => 'DashboardController@check']);
+
+Route::get('/logout', ['uses' => 'LoginController@Logout', 'before' => 'auth']);
