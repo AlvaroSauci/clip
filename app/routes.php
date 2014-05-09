@@ -18,8 +18,6 @@ Route::get('/', array( 'as' => 'login', function()
 
 Route::post('login/check', array( 'as' => 'loginCheck', 'uses' => 'LoginController@check'));
 
-
-
 // Lang------------------------------------------------------------------------
 
 Route::get('lang/{lang}', array('as' => 'lang', function($lang)
@@ -46,4 +44,5 @@ Route::get('dashboard', ['before' => 'auth', function()
 
 Route::post('dashboard/check', ['uses' => 'DashboardController@check']);
 
-Route::get('/logout', ['uses' => 'LoginController@Logout', 'before' => 'auth']);
+Route::get('logout', array('as' => 'logout', 'before' => 'auth', 'uses' => 'LoginController@Logout'));
+

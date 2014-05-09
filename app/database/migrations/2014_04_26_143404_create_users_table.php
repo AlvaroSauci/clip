@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration {
 			$table->string('name')->unique();
 			$table->string('email')->unique();
 			$table->string('password');
-			$table->timestamps();
+			$table->timeStamps();
 			$table->softDeletes();
     });
 
@@ -25,9 +25,7 @@ class CreateUsersTable extends Migration {
 
 	public function down()
 	{
-
 		Schema::drop('Users');
-
 	}
 
 }

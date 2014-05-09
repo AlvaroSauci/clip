@@ -35,8 +35,8 @@ class DashboardController extends BaseController {
 
     public function createComments()
     {
+
         $comentario                 = new Comment;
-        
         $comentario->message        = Input::get('message');
 
         if ( !$comentario->save() )
