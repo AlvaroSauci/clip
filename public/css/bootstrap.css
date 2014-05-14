@@ -733,6 +733,7 @@ pre code {
 }
 .container {
   padding: 15px;
+  margin-top: 5%;
   margin-right: auto;
   margin-left: auto;
   border-radius: 10px;
@@ -743,23 +744,50 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-.container #nuevo{
-  float: left;
-  width: 25%;
-  margin-right: auto;
-  margin-left: auto;
+
+.row .container{
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.container #nuevo textarea{
-  height: 100px;
+
+.row textarea{
+  resize:none;
+  border-bottom-right-radius: 0px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
-.container p{
-  border-radius: 5px;
-  background-color: #fff;
-  width: 75%;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
+
+.navbar-fixed-top .btn-link{
+  padding: 15;
+  color: black;
 }
+
+.navbar-fixed-top .btn-link:hover{
+  color: white;
+}
+
+#botones button{
+  float: right;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  background-clip: padding-box;
+  outline: none;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
+.panel-body p span{
+  float: right;
+  font-size: 0.7em;
+}
+
+.row .panel-body{
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -4166,6 +4194,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+      box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
 .pagination > li {
   display: inline;
@@ -5136,6 +5166,11 @@ button.close {
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
+
+.modal textarea{
+  resize:none;
+}
+
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
      -moz-transition:    -moz-transform .3s ease-out;
@@ -5162,6 +5197,7 @@ button.close {
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 6px;
+  border-bottom-right-radius: 0px;
   outline: none;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
           box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
