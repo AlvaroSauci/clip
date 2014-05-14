@@ -16,7 +16,7 @@
 	          		<ul class="dropdown-menu">
 		        		<li><a href="#"> {{ Lang::get('messages.contact') }} </a></li>
 		        		<li class="divider"></li>
-			            <li><a href="logout"> {{ Lang::get('messages.logout') }} </a></li>
+			            <li><a href="{{URL::to('logout')}}"> {{ Lang::get('messages.logout') }} </a></li>
 	          		</ul>
         		</li>
       		</ul>

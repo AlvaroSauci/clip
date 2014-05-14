@@ -37,6 +37,8 @@ class DashboardController extends BaseController {
     {
 
         $comentario                 = new Comment;
+
+        $comentario->name           = Auth::user()->name;
         $comentario->message        = Input::get('message');
 
         if ( !$comentario->save() )
