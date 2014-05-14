@@ -39,7 +39,10 @@ Route::post('register/check', array('as'=>'registerCheck', 'uses'=> 'RegisterCon
 
 Route::get('dashboard', ['before' => 'auth', function()
 {
-	return View::make('dashboard');
+
+	$comments 	= Comment::orderBy('created_at', 'DESC')->paginate(10);
+
+	return View::make('dashboard')->with('comments', $comments);
 }]);
 
 Route::post('dashboard/check', ['uses' => 'DashboardController@check']);

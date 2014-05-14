@@ -29,7 +29,7 @@ class DashboardController extends BaseController {
         {
             $this->createComments();
             
-            return 'Comentario creado';
+            return Redirect::to('dashboard');
         }
     }
 
@@ -37,6 +37,7 @@ class DashboardController extends BaseController {
     {
 
         $comentario                 = new Comment;
+        $comentario->name           = Auth::user()->name;
         $comentario->message        = Input::get('message');
 
         if ( !$comentario->save() )
