@@ -3,21 +3,24 @@
 {{ HTML::style('css/signin.css') }}
 
 @section('content')
-	
-	<div class="text-right" style="margin: 10px; margin-top: 0px; float: rigth;">
-		<a href="lang/es" > <img src = "./images/españa_icono.png" /> </a>
-		<a href="lang/en" > <img src = "./images/ingles_icono.png" /> </a>
+
+	<div class="text-right">
+		<span><a href="{{ URL::route('register') }}" class="btn btn-primary" > {{Lang::get('messages.register')}} </a></span>
+		<a href="lang/es" ><img src = "./images/españa_icono.png" /></a>
+		<a href="lang/en" ><img src = "./images/ingles_icono.png" /></a>
 	</div>
 
-	@if(Session::has('msg'))
-		<div class="alert alert-info container">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			{{ Session::get('msg') }}
-		</div>
-	@endif
+	<div class="row">
+		<div class="col-xs-offset-3 col-xs-4" >	
 
-	<div class="col-md-4 col-md-offset-4 offset4 span4" >	
-		<div class="row">
+			<div id="info">
+				@if(Session::has('msg'))
+					<div class="alert alert-info">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						{{ Session::get('msg') }}
+					</div>
+				@endif
+			</div>
 
 			<div class="text-center">
 				<img src="./images/logo.png" class="img">
@@ -42,12 +45,6 @@
 
 		</div>
 	</div>
-
-	<footer class="navbar-fixed-bottom">
-		<a href="{{ URL::route('register') }}" class="btn btn-primary" style="float:left; margin-bottom: 10px; margin-left: 10px"> {{Lang::get('messages.register')}} </a>
-		<p style="text-align: center;"> {{ Lang::get('messages.footer1') }} <a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a> {{ Lang::get('messages.footer2') }}</p>	
-	</footer>
-
 
 @stop
 

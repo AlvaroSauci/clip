@@ -35,17 +35,25 @@ Route::get('register',  array( 'as' => 'register', function()
 
 Route::post('register/check', array('as'=>'registerCheck', 'uses'=> 'RegisterController@check'));
 
-// Index------------------------------------------------------------------------
+// Dashboard--------------------------------------------------------------------
 
-Route::get('dashboard', ['before' => 'auth', function()
+Route::get('dashboard', array( 'as' => 'dashboard', 'before' => 'auth', function()
 {
 
 	$comments 	= Comment::orderBy('created_at', 'DESC')->paginate(10);
 
 	return View::make('dashboard')->with('comments', $comments);
-}]);
+}));
 
-Route::post('dashboard/check', ['uses' => 'DashboardController@check']);
+Route::post('dashboard/check', array( 'as' => 'dashboardCheck', 'uses' => 'DashboardController@check'));
 
 Route::get('/logout', array('as' => 'logout', 'before' => 'auth', 'uses' => 'LoginController@Logout'));
 
+// Contact-----------------------------------------------------------------------
+
+Route::get('contact', array( 'as' => 'contact', 'before' => 'auth', function()
+{
+	return View::make('contact');
+}));
+
+Route::post('contact/check', array( 'as' => 'contactCheck', 'uses' => 'ContactController@check'));

@@ -33,9 +33,10 @@
   		</div>
 	</nav>
 
-	<div class="container">
+	<div id="contact" class="container">
 		<div class="row">
 			<div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
+
 				@if(Session::has('errors'))
 					<div class="alert alert-danger alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -45,64 +46,28 @@
 					</div>
 				@endif
 
-				@if(Session::has('msg'))
-					<div class="alert alert-info alert-dismissable">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						{{ Session::get('msg') }}
-					</div>
-				@endif
+				<div class="col-xs-8 col-xs-offset-2">
+					
+				{{ Form::open(array('url' => 'contact/check', 'role'=>'form')) }}
 
-				<div class="col-xs-4">
-					
-				{{ Form::open(array('url' => 'dashboard/check', 'role'=>'form')) }}
+		    		{{ Form::text('name', Auth::user()->name, array( 'class'=>'form-control' ))}}
+				
+					{{ Form::email('email', Auth::user()->email, array( 'class'=>'form-control' ))}}
 			    	
-			    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>'Clippea', 'rows'=>'5'))}}
-					
-					<div id="botones">
-						<button type="submit" class="btn btn-success btn-lg" style="float: right"><span class="glyphicon glyphicon-pencil"></span></button>
-					</div>
+			    	{{ Form::textarea('suggest', '', array('class'=>'form-control', 'placeholder'=> Lang::get('messages.placeholder_contact') , 'rows'=>'5'))}}
+
+					<button type="submit" class="btn btn-success btn-lg" style="float: right">{{ Lang::get('messages.send') }}</button>
 
 				{{ Form::close() }}
 
 				</div>
-				<div class="col-xs-8">
 
-					@foreach ($comments as $comment)
-
-						<div class="panel panel-default">
-							<div class="panel-body"> <p> {{ $comment->message }} </p> <p><span>{{ $comment->name.' - '.$comment->created_at }}</span></p> </div>
-						</div>
-						
-					@endforeach
-
-					{{ $comments->links() }}
-
-				</div>		
-			</div>
-		</div>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				{{ Form::open(array('url' => 'dashboard/check', 'role'=>'form')) }}
-					<div class="modal-content">
-						<div class="modal-body">
-
-					    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>'Clippea', 'rows'=>'5'))}}
-
-						</div>
-						<div id="botones">
-							<button type="submit" id="bottom-share" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-pencil"></span></button>
-							<button type="buttom" class="btn btn-danger btn-lg" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
-						</div>
-					</div>
-				{{ Form::close() }}
 			</div>
 		</div>
 
 	</div>
 
-	<div class="navbar">
+	<div class="navbar navbar-fixed-bottom">
 		<p> {{ Lang::get('messages.footer1') }} <a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a> {{ Lang::get('messages.footer2') }}</p>
 	</div>
 

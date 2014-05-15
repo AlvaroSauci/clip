@@ -20,6 +20,14 @@ return array(
     'contact' => 'Contacto',
     'logout' => 'Cerrar sesión',
     'footer1' => 'Página web creada por ',
-    'footer2' => ' como proyecto integrado.'
+    'footer2' => ' como proyecto integrado.',
+    'message_required' => 'El campo debe contener algo.',
+    'placeholder_contact' => 'Escriba sus dudas o sugerencias.',
+    'send' => 'Enviar',
+    'message_send' => 'Mensaje enviado!',
+    'contact_name' => 'Nombre requerido.',
+    'contact_email' => 'Email requerido.',
+    'contact_suggest' => 'Duda o sugerencia requerida.'
+
 
     );
