@@ -50,7 +50,7 @@ class ContactController extends BaseController {
 
     public function sendMail()
         {
-            $myEmail    = 'alvaro.sauci@gmail.com';
+            $myEmail    = 'alvaro.clippea@gmail.com';
 
             Mail::send('emails.emailclip', array('user' => Input::get('name'), 'email' => Input::get('email'), 'suggest' => Input::get('suggest')), function ($message) use ($myEmail) {
                 $message->subject('Contacto Clip');

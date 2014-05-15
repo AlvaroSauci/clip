@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'alvaro.sauci@gmail.com', 'name' => 'Clip'),
+	'from' => array('address' => 'alvaro.clippea@gmail.com', 'name' => 'Clip'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'alvaro.sauci',
+	'username' => 'alvaro.clippea',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'asv17121991',
+	'password' => 'proyectointegrado',
 
 	/*
 	|--------------------------------------------------------------------------
