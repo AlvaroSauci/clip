@@ -34,8 +34,8 @@
 	</nav>
 
 	<div class="container">
-		<div class="row">
-			<div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
+		<div id="dashboard" class="row">
+			<div class="col-xs-12">
 				@if(Session::has('errors'))
 					<div class="alert alert-danger alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -65,19 +65,27 @@
 				{{ Form::close() }}
 
 				</div>
-				<div class="col-xs-8">
+				<div class="col-xs-7 col-xs-offset-1">
 
 					@foreach ($comments as $comment)
 
 						<div class="panel panel-default">
-							<div class="panel-body"> <p> {{ $comment->message }} </p> <p><span>{{ $comment->name.' - '.$comment->created_at }}</span></p> </div>
+							<div class="panel-body"> 
+								<p> {{ $comment->message }} </p> 
+								<p><span>{{ $comment->name.' - '.$comment->created_at }}</span></p>
+								<span><p>  </p></span>
+							</div>
 						</div>
 						
 					@endforeach
 
-					{{ $comments->links() }}
 
-				</div>		
+				</div>
+				
+				<div class="text-center">
+					{{ $comments->links() }}
+				</div>
+
 			</div>
 		</div>
 

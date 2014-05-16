@@ -734,7 +734,6 @@ pre code {
 }
 .container {
   padding: 15px;
-  margin-top: 5%;
   margin-right: auto;
   margin-left: auto;
   border-radius: 10px;
@@ -5917,6 +5916,26 @@ td.visible-print {
   margin-bottom: 30px;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
       box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
+#contact form{
+  padding-top: 5px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 70px;
+  border-radius: 15px;
+  background-color: black;
+}
+
+#dashboard{
+  padding: 50px;
+  margin-top: 60px;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.panel-body span p{
+  float: left;
 }
 
 
