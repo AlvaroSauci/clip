@@ -784,6 +784,25 @@ pre code {
   font-size: 0.7em;
 }
 
+.panel-body button{
+  float: left;
+  color: grey;
+}
+
+.panel-body button:hover{
+  color: #428BCA;
+}
+
+.panel-body a{
+  float: left;
+  margin-left: 10px;
+  color: grey;
+}
+
+.panel-body a:hover{
+  color: rgb(0, 198, 50);
+}
+
 .row .panel-body{
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
           box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
@@ -2353,7 +2372,7 @@ fieldset[disabled] .btn-link {
 .btn-link:hover,
 .btn-link:focus {
   color: #2a6496;
-  text-decoration: underline;
+  text-decoration: none;
   background-color: transparent;
 }
 .btn-link[disabled]:hover,

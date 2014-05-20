@@ -49,15 +49,22 @@ class ContactController extends BaseController {
     }
 
     public function sendMail()
-        {
-            $myEmail    = 'alvaro.clippea@gmail.com';
+    {
+        $myEmail    = 'alvaro.clippea@gmail.com';
 
-            Mail::send('emails.emailclip', array('user' => Input::get('name'), 'email' => Input::get('email'), 'suggest' => Input::get('suggest')), function ($message) use ($myEmail) {
-                $message->subject('Contacto Clip');
-                $message->from( Input::get('email') , Input::get('name'));
-                $message->to($myEmail); // Recipient address
-            });     
-        }
+        Mail::send('emails.emailclip', //Esta es la vista que contiene el contenido del mensaje.
+                    array(
+                            'user' => Input::get('name'),           // Estos son los
+                            'email' => Input::get('email'),         // valores que le
+                            'suggest' => Input::get('suggest')),    // pasamos a la vista
+                            function ($message) use ($myEmail)
+                            {
+                                $message->subject('Contacto Clip'); // Asunto del email
+                                $message->from( Input::get('email') , Input::get('name')); // Quien lo manda.
+                                $message->to($myEmail);             // Se envia a este email.
+                            }
+                    );     
+    }
 
 }
 

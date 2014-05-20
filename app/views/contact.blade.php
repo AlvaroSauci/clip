@@ -62,6 +62,25 @@
 
 				</div>
 
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						{{ Form::open(array('url' => 'dashboard/check', 'role'=>'form')) }}
+							<div class="modal-content">
+								<div class="modal-body">
+
+							    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>'Clippea', 'rows'=>'5'))}}
+
+								</div>
+								<div id="botones">
+									<button type="submit" id="bottom-share" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button type="buttom" class="btn btn-danger btn-lg" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+								</div>
+							</div>
+						{{ Form::close() }}
+					</div>
+				</div>
+
 			</div>
 		</div>
 

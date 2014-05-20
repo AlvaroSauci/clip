@@ -11,14 +11,9 @@
 
 		<div>
 		
-		<p>
-			Nombre: {{$user}}
-		</p>
-		<p>
-			Email: {{$email}}
-		</p>
-			Mensaje: {{$suggest}}
-		</p>
+			<p> Nombre: 	{{$user}} 		</p>
+			<p>	Email: 		{{$email}} 		</p>
+			<p> Mensaje: 	{{$suggest}}	</p>
 			
 		</div>
 	</body>

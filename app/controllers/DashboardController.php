@@ -49,5 +49,27 @@ class DashboardController extends BaseController {
         }
 
     }
+
+
+    public function reclippeaComment($id){
+
+        $comentarioAnt              = Comment::find($id);
+        $comentario                 = new Comment;
+
+        $comentario->name           = Auth::user()->name;
+        $comentario->message        = $comentarioAnt->message;
+
+        if ( !$comentario->save() )
+        {
+            return Redirect::intended('dashboard')
+                ->withErrors($comentario->errors()->all(':message'))
+                ->withInput();            
+        }
+        else
+        {
+            return Redirect::route('dashboard');
+        }
+
+    }
 }
 ?>

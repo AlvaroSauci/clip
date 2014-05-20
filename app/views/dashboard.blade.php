@@ -70,7 +70,14 @@
 					@foreach ($comments as $comment)
 
 						<div class="panel panel-default">
-							<div class="panel-body"> <p> {{ $comment->message }} </p> <p><span>{{ $comment->name.' - '.$comment->created_at }}</span></p> </div>
+							<div class="panel-body"> 
+
+								<p> {{ $comment->message }} </p>
+								<p><span>{{ $comment->name.' - '.$comment->created_at }}</span></p>
+								<a class="btn-link glyphicon glyphicon-share-alt"></a>
+								<a class="btn-link glyphicon glyphicon-retweet" href="dashboard/reclippeaComment/{{$comment->id}}"></a>
+
+							</div>
 						</div>
 						
 					@endforeach

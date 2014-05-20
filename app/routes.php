@@ -47,6 +47,8 @@ Route::get('dashboard', array( 'as' => 'dashboard', 'before' => 'auth', function
 
 Route::post('dashboard/check', array( 'as' => 'dashboardCheck', 'uses' => 'DashboardController@check'));
 
+Route::get('dashboard/reclippeaComment/{id}', array('as'=>'reclippea', 'uses'=>'DashboardController@reclippeaComment'));
+
 Route::get('/logout', array('as' => 'logout', 'before' => 'auth', 'uses' => 'LoginController@Logout'));
 
 // Contact-----------------------------------------------------------------------
