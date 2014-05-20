@@ -35,7 +35,7 @@
 
 	<div id="contact" class="container">
 		<div class="row">
-			<div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
+			<div class="col-xs-10 col-xs-offset-1">
 
 				@if(Session::has('errors'))
 					<div class="alert alert-danger alert-dismissable">
@@ -48,11 +48,11 @@
 
 				<div class="col-xs-8 col-xs-offset-2">
 					
-				{{ Form::open(array('url' => 'contact/check', 'role'=>'form')) }}
+				{{ Form::open(array('url' => 'contact/check', 'role'=>'form', 'id'=>'contact')) }}
 
-		    		{{ Form::text('name', Auth::user()->name, array( 'class'=>'form-control' ))}}
+		    		{{ Form::text('name', Auth::user()->name, array( 'class'=>'form-control', 'placeholder'=> Lang::get('messages.name') ))}}
 				
-					{{ Form::email('email', Auth::user()->email, array( 'class'=>'form-control' ))}}
+					{{ Form::email('email', Auth::user()->email, array( 'class'=>'form-control', 'placeholder'=> Lang::get('messages.email') ))}}
 			    	
 			    	{{ Form::textarea('suggest', '', array('class'=>'form-control', 'placeholder'=> Lang::get('messages.placeholder_contact') , 'rows'=>'5'))}}
 
