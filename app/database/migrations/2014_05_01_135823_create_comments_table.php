@@ -11,6 +11,7 @@ class CreateCommentsTable extends Migration {
       		$table->increments('id');
 			$table->string('name');
 			$table->mediumtext('message');
+			$table->integer('id_padre');
       		$table->timeStamps();
       		$table->softDeletes();
     	});

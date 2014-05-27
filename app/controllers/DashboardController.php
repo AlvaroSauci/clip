@@ -71,5 +71,27 @@ class DashboardController extends BaseController {
         }
 
     }
+
+    public function answerComment($id){
+
+        $comentarioAnt              = Comment::find($id);
+        $comentario                 = new Comment;
+
+        $comentario->name           = Auth::user()->name;
+        $comentario->message        = Input::get('message');
+        $comentario->id_padre       = $comentarioAnt->id;
+
+        if ( !$comentario->save() )
+        {
+            return Redirect::intended('dashboard')
+                ->withErrors($comentario->errors()->all(':message'))
+                ->withInput();            
+        }
+        else
+        {
+            return Redirect::route('dashboard');
+        }
+
+    }
 }
 ?>

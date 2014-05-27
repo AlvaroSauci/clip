@@ -29,7 +29,10 @@ class RegisterController extends BaseController {
         {
             $this->createUser();
             
-            return 'Registrado';
+            if ( Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
+            {
+                return Redirect::to('dashboard');
+            }
         }
     }
 

@@ -27,6 +27,7 @@ return array(
     'message_send' => 'Message sent!',
     'contact_name' => 'Name required.',
     'contact_email' => 'Email required.',
-    'contact_suggest' => 'Doubt or suggestion required.'
+    'contact_suggest' => 'Doubt or suggestion required.',
+    'answer' => 'answered'
 
     );

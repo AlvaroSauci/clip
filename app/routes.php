@@ -40,14 +40,17 @@ Route::post('register/check', array('as'=>'registerCheck', 'uses'=> 'RegisterCon
 Route::get('dashboard', array( 'as' => 'dashboard', 'before' => 'auth', function()
 {
 
-	$comments 	= Comment::orderBy('created_at', 'DESC')->paginate(10);
+	$comments 		= Comment::where('id_padre', '==', 0)->orderBy( 'created_at', 'DESC' )->paginate(10);
+	$commentsHijos 	= Comment::where('id_padre', '!=', 0)->orderBy('created_at', 'DESC')->get();
 
-	return View::make('dashboard')->with('comments', $comments);
+	return View::make('dashboard')->with('comments', $comments)->with('commentsHijos', $commentsHijos);
 }));
 
 Route::post('dashboard/check', array( 'as' => 'dashboardCheck', 'uses' => 'DashboardController@check'));
 
 Route::get('dashboard/reclippeaComment/{id}', array('as'=>'reclippea', 'uses'=>'DashboardController@reclippeaComment'));
+
+Route::post('dashboard/answerComment/{id}', array('as'=>'answer', 'uses'=>'DashboardController@answerComment'));
 
 Route::get('/logout', array('as' => 'logout', 'before' => 'auth', 'uses' => 'LoginController@Logout'));
 

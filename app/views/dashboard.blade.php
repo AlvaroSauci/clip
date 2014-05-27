@@ -34,7 +34,7 @@
 	</nav>
 
 	<div class="container">
-		<div id="dashboard" class="row">
+		<div class="row">
 			<div class="col-xs-12">
 				@if(Session::has('errors'))
 					<div class="alert alert-danger alert-dismissable">
@@ -52,7 +52,7 @@
 					</div>
 				@endif
 
-				<div class="col-xs-4">
+				<div id="dashboardform" class="col-xs-4">
 					
 				{{ Form::open(array('url' => 'dashboard/check', 'role'=>'form')) }}
 			    	
@@ -65,26 +65,70 @@
 				{{ Form::close() }}
 
 				</div>
-				<div class="col-xs-7 col-xs-offset-1">
+				<div id="dashboard" class="col-xs-7">
 
 					@foreach ($comments as $comment)
 
-						<div class="panel panel-default">
-							<div class="panel-body"> 
-<<<<<<< HEAD
+						@if( $comment->id_padre == 0 )
 
-								<p> {{ $comment->message }} </p>
-								<p><span>{{ $comment->name.' - '.$comment->created_at }}</span></p>
-								<a class="btn-link glyphicon glyphicon-share-alt"></a>
-								<a class="btn-link glyphicon glyphicon-retweet" href="dashboard/reclippeaComment/{{$comment->id}}"></a>
+							<div class="panel panel-primary">
+								<div class="panel-body">
 
-=======
-								<p> {{ $comment->message }} </p> 
-								<p><span>{{ $comment->name.' - '.$comment->created_at }}</span></p>
-								<span><p>  </p></span>
->>>>>>> c1356e4a29a74309236f1f593db843af97c165a5
+									<p> {{ $comment->message }} </p>
+									<p>
+										<span>{{ $comment->name.' - '.$comment->created_at }}</span>
+										<button type="button" class="btn-link glyphicon glyphicon-share-alt" data-toggle="collapse" data-target="#form{{$comment->id}}"></button>
+										<button type="button" class="btn-link glyphicon glyphicon-eye-close" data-toggle="collapse" data-target="#hijos{{$comment->id}}"></button>
+										<a class="btn-link glyphicon glyphicon-retweet" href="dashboard/reclippeaComment/{{$comment->id}}"></a>
+
+									</p>
+
+									<div id="form{{$comment->id}}" class="collapse formAnswer">
+
+										<hr/>
+										
+										{{ Form::open(array('url' => 'dashboard/answerComment/' . $comment->id, 'role'=>'form')) }}
+				    	
+									    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>'Clippea', 'rows'=>'5'))}}
+											
+											<div id="botones">
+												<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-pencil"></span></button>
+											</div>
+
+										{{ Form::close() }}
+									</div>
+
+
+									<div id="hijos{{$comment->id}}" class="collapse in hijos">
+
+										<hr/>
+										
+										@foreach ($commentsHijos as $commentHijo)
+
+											@if( $commentHijo->id_padre == $comment->id)
+
+												<div class="panel panel-primary">
+													<div id="hijo" class="panel-body">
+
+														<p> {{ $commentHijo->message }} </p>
+														<p><span>{{ $commentHijo->name.' '.Lang::get('messages.answer').' '.$comment->name. ' - ' .$commentHijo->created_at }}</span></p>
+
+													</div>
+												</div>
+
+											@endif
+
+										@endforeach
+										
+									</div>
+
+
+
+								</div>
+							
 							</div>
-						</div>
+						
+						@endif
 						
 					@endforeach
 
@@ -110,7 +154,7 @@
 						</div>
 						<div id="botones">
 							<button type="submit" id="bottom-share" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-pencil"></span></button>
-							<button type="buttom" class="btn btn-danger btn-lg" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+							<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
 						</div>
 					</div>
 				{{ Form::close() }}
