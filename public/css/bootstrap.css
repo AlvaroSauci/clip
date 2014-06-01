@@ -13,6 +13,7 @@ html {
 }
 body {
   margin: 0;
+  height: 100%;
 }
 article,
 aside,
@@ -5952,14 +5953,22 @@ td.visible-print {
 }
 
 #dashboardform{
-  padding: 30px;
-  padding-top: 50px;
-  margin-top: 60px;
-  border-radius: 10px;
+  padding: 60px;
+  padding-top: 100px;
+  margin-top: 30px;
+  padding-bottom: 75px;
+  background-image: url('../images/post_it.png');
+  background-repeat: no-repeat;
+
 }
 
-#contact .row{
-  margin-top: 70px;
+#dashboardform form{
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+
+#contacto{
+  
 }
 
 #hijo{
@@ -5981,8 +5990,47 @@ td.visible-print {
 
 .hijos .panel-primary{
   margin: 1px;
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .5);
+          box-shadow: 0 0 0 rgba(0, 0, 0, .5);
 }
 
 .formAnswer #botones button{
   color: white;
+}
+
+.container .row{
+  margin-top: 20px;
+  height: 82.1%;
+}
+
+#contenido{
+  background-color: lightgrey;
+}
+
+#contenido .container{
+  background-image: url('../images/Cuadricula.jpg');
+  background-repeat: repeat;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
+#pie p{
+  margin-top: 15px;
+  color: black;
+}
+
+#pie a{
+  color: black;
+}
+
+#pie{
+  background-color: rgba( 0, 0, 0, 0.15 );
+  opacity: 70%;
+  margin-top: 15px;
+  border-radius: 0px;
+}
+
+.panel-primary{
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }

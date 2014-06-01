@@ -2,34 +2,33 @@
 
 @section('content')
 
+<div id="contenido">
 	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
   		<div class="container-fluid">
-  			<div class="row">
 
-	    		<div class="col-xs-1 navbar-header">
-	      			<a href="{{ URL::route('dashboard') }}"><img src="images/logo.png" style="height: 40px; margin-top: 5px;"></a>
-	    		</div>
-				
-				<div class="col-xs-offset-7 col-xs-4">
-		      		<ul class="nav navbar-nav navbar-right">
-		      			<li> 
-		      				<!-- Button trigger modal -->
-							<button class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" >
-								<span class="glyphicon glyphicon-pencil"></span>
-							</button>
-						</li>
-				        <li><p> {{ Lang::get('messages.welcome') }},<b> {{ Auth::user()->name; }} </b></p></li>
-				        <li class="dropdown">
-			          		<a href="#" class="dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"><b class="caret"></b></a>
-			          		<ul class="dropdown-menu">
-				        		<li><a href="{{ URL::route('contact') }}"> {{ Lang::get('messages.contact') }} </a></li>
-				        		<li class="divider"></li>
-					            <li><a href="logout"> {{ Lang::get('messages.logout') }} </a></li>
-			          		</ul>
-		        		</li>
-		      		</ul>
-				</div>
-	      	</div>
+    		<div class="col-xs-1 navbar-header">
+      			<a href="{{ URL::route('dashboard') }}"><img src="images/logo.png" style="height: 40px; margin-top: 5px;"></a>
+    		</div>
+			
+			<div class="col-xs-offset-7 col-xs-4">
+	      		<ul class="nav navbar-nav navbar-right">
+	      			<li> 
+	      				<!-- Button trigger modal -->
+						<button class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" >
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+					</li>
+			        <li><p> {{ Lang::get('messages.welcome') }},<b> {{ Auth::user()->name; }} </b></p></li>
+			        <li class="dropdown">
+		          		<a href="#" class="dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"><b class="caret"></b></a>
+		          		<ul class="dropdown-menu">
+			        		<li><a href="{{ URL::route('contact') }}"> {{ Lang::get('messages.contact') }} </a></li>
+			        		<li class="divider"></li>
+				            <li><a href="logout"> {{ Lang::get('messages.logout') }} </a></li>
+		          		</ul>
+	        		</li>
+	      		</ul>
+			</div>
   		</div>
 	</nav>
 
@@ -56,7 +55,7 @@
 					
 				{{ Form::open(array('url' => 'dashboard/check', 'role'=>'form')) }}
 			    	
-			    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>'Clippea', 'rows'=>'5'))}}
+			    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>'Clippea', 'rows'=>'7'))}}
 					
 					<div id="botones">
 						<button type="submit" class="btn btn-success btn-lg" style="float: right"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -65,7 +64,7 @@
 				{{ Form::close() }}
 
 				</div>
-				<div id="dashboard" class="col-xs-7">
+				<div id="dashboard" class="col-xs-offset-4 col-xs-7">
 
 					@foreach ($comments as $comment)
 
@@ -163,8 +162,10 @@
 
 	</div>
 
-	<div class="navbar">
-		<p> {{ Lang::get('messages.footer1') }} <a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a> {{ Lang::get('messages.footer2') }}</p>
+	<div id="pie" class="navbar">
+		<p> {{ Lang::get('messages.footer1') }} <b><a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a></b> {{ Lang::get('messages.footer2') }}</p>
 	</div>
+	
+</div>
 
 @stop
