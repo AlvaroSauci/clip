@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xs-offset-3 col-xs-4" >	
+		<div class="col-xs-6" >	
 
 			<div id="info">
 				@if(Session::has('msg'))
@@ -24,24 +24,25 @@
 
 			<div class="text-center">
 				<img src="./images/logo.png" class="img">
-			</div>
-	
-		    {{ Form::open(array('url' => 'login/check', 'class'=>'form-signin', 'role'=>'form')) }}
-		    	
-				{{ Form::email('email', '', array('class'=>'form-control', 'placeholder'=>Lang::get('messages.email')))}}
-				
-				{{ Form::password('password', array('class'=>'form-control', 'placeholder'=>Lang::get('messages.password'))) }}
-				
-				@if(Session::has('error_message'))
-					<div class="alert alert-danger alert-dismissable">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						{{ Session::get('error_message') }}
-					</div>
-				@endif
-				
-				{{ Form::submit(Lang::get('messages.submit'), array('class'=>'btn btn-lg btn-primary btn-block')) }}
 
-			{{ Form::close() }}
+			    {{ Form::open(array('url' => 'login/check', 'class'=>'form-signin', 'role'=>'form')) }}
+			    	
+					{{ Form::email('email', '', array('class'=>'form-control', 'placeholder'=>Lang::get('messages.email')))}}
+					
+					{{ Form::password('password', array('class'=>'form-control', 'placeholder'=>Lang::get('messages.password'))) }}
+					
+					@if(Session::has('error_message'))
+						<div class="alert alert-danger alert-dismissable">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							{{ Session::get('error_message') }}
+						</div>
+					@endif
+					
+					{{ Form::submit(Lang::get('messages.submit'), array('class'=>'btn btn-lg btn-primary btn-block')) }}
+
+				{{ Form::close() }}
+
+			</div>
 
 		</div>
 	</div>

@@ -55,7 +55,6 @@ class DashboardController extends BaseController {
 
         $comentarioAnt              = Comment::find($id);
         $comentario                 = new Comment;
-
         $comentario->name           = Auth::user()->name;
         $comentario->message        = $comentarioAnt->message;
 
@@ -69,14 +68,12 @@ class DashboardController extends BaseController {
         {
             return Redirect::route('dashboard');
         }
-
     }
 
     public function answerComment($id){
 
         $comentarioAnt              = Comment::find($id);
         $comentario                 = new Comment;
-
         $comentario->name           = Auth::user()->name;
         $comentario->message        = Input::get('message');
         $comentario->id_padre       = $comentarioAnt->id;
@@ -91,7 +88,6 @@ class DashboardController extends BaseController {
         {
             return Redirect::route('dashboard');
         }
-
     }
 }
 ?>

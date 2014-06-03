@@ -3,6 +3,7 @@
 @section('content')
 
 <div id="contenido">
+
 	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
   		<div class="container-fluid">
 
@@ -64,6 +65,7 @@
 				{{ Form::close() }}
 
 				</div>
+				
 				<div id="dashboard" class="col-xs-offset-4 col-xs-7">
 
 					@foreach ($comments as $comment)
