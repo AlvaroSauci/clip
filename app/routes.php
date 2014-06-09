@@ -18,6 +18,11 @@ Route::get('/', array( 'as' => 'login', function()
 
 Route::post('login/check', array( 'as' => 'loginCheck', 'uses' => 'LoginController@check'));
 
+Route::get('login', array( 'as' => 'login', function()
+{
+	return View::make('login');
+}));
+
 // Lang------------------------------------------------------------------------
 
 Route::get('lang/{lang}', array('as' => 'lang', function($lang)

@@ -23,9 +23,9 @@
 			        <li class="dropdown">
 		          		<a href="#" class="dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"><b class="caret"></b></a>
 		          		<ul class="dropdown-menu">
-			        		<li><a href="{{ URL::route('contact') }}"> {{ Lang::get('messages.contact') }} </a></li>
+			        		<li><a href="{{ URL::route('contact') }}"><i class="glyphicon glyphicon-envelope"></i> {{ Lang::get('messages.contact') }} </a></li>
 			        		<li class="divider"></li>
-				            <li><a href="logout"> {{ Lang::get('messages.logout') }} </a></li>
+				            <li><a href="logout"><i class="glyphicon glyphicon-off"></i> {{ Lang::get('messages.logout') }}</a></li>
 		          		</ul>
 	        		</li>
 	      		</ul>

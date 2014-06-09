@@ -762,11 +762,11 @@ pre code {
 
 .navbar-fixed-top .btn-link{
   padding: 15;
-  color: black;
+  color: white;
 }
 
 .navbar-fixed-top .btn-link:hover{
-  color: white;
+  color: black;
 }
 
 #botones button{
@@ -4034,11 +4034,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #fff;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #232323;
+  color: white;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #fff;
+  color: black;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -5916,7 +5916,6 @@ td.visible-print {
 /*# sourceMappingURL=bootstrap.css.map */
 
 .navbar{
-  text-align: center;
   margin-bottom: 0px !important;
   padding-bottom: 0px;
 }
@@ -5957,7 +5956,7 @@ td.visible-print {
   padding-top: 100px;
   margin-top: 30px;
   padding-bottom: 75px;
-  background-image: url('../images/post_it.png');
+  background: url('../images/post_it.png');
   background-repeat: no-repeat;
 
 }
@@ -5968,9 +5967,14 @@ td.visible-print {
 }
 
 #contacto{
-  
+  margin-top: 8%;
+  background: url('../images/contact-form.png');
+  background-color: white;
+  background-repeat: repeat-x;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
-
+  
 #hijo{
   margin: 5px;
 }
@@ -6024,6 +6028,7 @@ td.visible-print {
 }
 
 #pie{
+  text-align: center;
   background-color: rgba( 0, 0, 0, 0.15 );
   opacity: 70%;
   margin-top: 15px;
@@ -6034,3 +6039,12 @@ td.visible-print {
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
           box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
+
+.navbar-fixed-top{
+  color:white;
+}
+
+#dashboardform .form-control{
+  background-color: rgb(255,255,100);
+}
+

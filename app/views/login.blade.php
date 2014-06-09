@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xs-6" >	
+		<div class="col-xs-6">	
 
 			<div id="info">
 				@if(Session::has('msg'))
@@ -22,7 +22,7 @@
 				@endif
 			</div>
 
-			<div class="text-center">
+			<div id="login" class="text-center">
 				<img src="./images/logo.png" class="img">
 
 			    {{ Form::open(array('url' => 'login/check', 'class'=>'form-signin', 'role'=>'form')) }}
