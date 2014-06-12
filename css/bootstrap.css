@@ -6045,6 +6045,9 @@ td.visible-print {
 }
 
 #dashboardform .form-control{
-  background-color: rgb(255,255,100);
+  background-color: rgb(245,218,72);
 }
 
+#alertas.alert{
+  margin-top: 50px;
+}

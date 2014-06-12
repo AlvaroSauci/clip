@@ -28,6 +28,7 @@ return array(
     'contact_name' => 'Name required.',
     'contact_email' => 'Email required.',
     'contact_suggest' => 'Doubt or suggestion required.',
-    'answer' => 'answered'
+    'answer' => 'answered',
+    'respond' => 'Answer'
 
     );

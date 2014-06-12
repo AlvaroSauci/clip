@@ -6,7 +6,7 @@
 
 	<div class="text-right">
 		<span><a href="{{ URL::route('register') }}" class="btn btn-primary" > {{Lang::get('messages.register')}} </a></span>
-		<a href="lang/es" ><img src = "./images/españa_icono.png" /></a>
+		<a href="lang/es" ><img src = "./images/espana_icono.png" /></a>
 		<a href="lang/en" ><img src = "./images/ingles_icono.png" /></a>
 	</div>
 

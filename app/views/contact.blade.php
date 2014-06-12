@@ -24,9 +24,9 @@
 					        <li class="dropdown">
 				          		<a href="#" class="dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"><b class="caret"></b></a>
 				          		<ul class="dropdown-menu">
-					        		<li><a href="{{ URL::route('contact') }}"> {{ Lang::get('messages.contact') }} </a></li>
+					        		<li><a href="{{ URL::route('contact') }}"><i class="glyphicon glyphicon-envelope"></i> {{ Lang::get('messages.contact') }} </a></li>
 					        		<li class="divider"></li>
-						            <li><a href="logout"> {{ Lang::get('messages.logout') }} </a></li>
+						            <li><a href="logout"><i class="glyphicon glyphicon-off"></i> {{ Lang::get('messages.logout') }} </a></li>
 				          		</ul>
 			        		</li>
 			      		</ul>
@@ -37,16 +37,17 @@
 
 		<div id="contact" class="container">
 			<div class="row">
-				<div id="contacto" class="col-xs-8 col-xs-offset-2">
 
-					@if(Session::has('errors'))
-						<div class="alert alert-danger alert-dismissable">
-							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							@foreach ($errors->all() as $error)
-								<p>{{$error}}</p>
-							@endforeach
-						</div>
-					@endif
+				@if(Session::has('errors'))
+					<div id="alertas" class="alert alert-danger alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						@foreach ($errors->all() as $error)
+							<p>{{$error}}</p>
+						@endforeach
+					</div>
+				@endif
+
+				<div id="contacto" class="col-xs-8 col-xs-offset-2">
 
 					<div class="col-xs-10 col-xs-offset-1">
 						
@@ -89,7 +90,14 @@
 		</div>
 
 		<div id="pie" class="navbar">
-			<p> {{ Lang::get('messages.footer1') }} <b><a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a></b> {{ Lang::get('messages.footer2') }}</p>
+			<p> {{ Lang::get('messages.footer1') }} <b><a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a></b> {{ Lang::get('messages.footer2') }}
+			</p>
+
+			<p>
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional</a>.
+			</p>
+
+
 		</div>
 
 	</div>

@@ -46,7 +46,7 @@ Route::get('dashboard', array( 'as' => 'dashboard', 'before' => 'auth', function
 {
 
 	$comments 		= Comment::where('id_padre', '==', 0)->orderBy( 'created_at', 'DESC' )->paginate(10);
-	$commentsHijos 	= Comment::where('id_padre', '!=', 0)->orderBy('created_at', 'DESC')->get();
+	$commentsHijos 	= Comment::where('id_padre', '!=', 0)->orderBy('created_at', 'ASC')->get();
 
 	return View::make('dashboard')->with('comments', $comments)->with('commentsHijos', $commentsHijos);
 }));

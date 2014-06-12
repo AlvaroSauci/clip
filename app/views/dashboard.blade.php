@@ -37,7 +37,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 				@if(Session::has('errors'))
-					<div class="alert alert-danger alert-dismissable">
+					<div id="alertas" class="alert alert-danger alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 						@foreach ($errors->all() as $error)
 							<p>{{$error}}</p>
@@ -46,7 +46,7 @@
 				@endif
 
 				@if(Session::has('msg'))
-					<div class="alert alert-info alert-dismissable">
+					<div id="alertas" class="alert alert-info alert-dismissable">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 						{{ Session::get('msg') }}
 					</div>
@@ -84,20 +84,7 @@
 
 									</p>
 
-									<div id="form{{$comment->id}}" class="collapse formAnswer">
-
-										<hr/>
-										
-										{{ Form::open(array('url' => 'dashboard/answerComment/' . $comment->id, 'role'=>'form')) }}
-				    	
-									    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>'Clippea', 'rows'=>'5'))}}
-											
-											<div id="botones">
-												<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-pencil"></span></button>
-											</div>
-
-										{{ Form::close() }}
-									</div>
+									
 
 
 									<div id="hijos{{$comment->id}}" class="collapse in hijos">
@@ -112,8 +99,15 @@
 													<div id="hijo" class="panel-body">
 
 														<p> {{ $commentHijo->message }} </p>
-														<p><span>{{ $commentHijo->name.' '.Lang::get('messages.answer').' '.$comment->name. ' - ' .$commentHijo->created_at }}</span></p>
+														<p><span>{{ $commentHijo->name.' - ' .$commentHijo->created_at }}</span></p>
 
+														<p>
+															<button type="button" class="btn-link glyphicon glyphicon-share-alt" data-toggle="collapse" data-target="#form{{$comment->id}}"></button>
+															<a class="btn-link glyphicon glyphicon-retweet" href="dashboard/reclippeaComment/{{$commentHijo->id}}"></a>
+
+														</p>
+
+									
 													</div>
 												</div>
 
@@ -123,7 +117,20 @@
 										
 									</div>
 
+									<div id="form{{$comment->id}}" class="collapse formAnswer">
 
+										<hr/>
+										
+										{{ Form::open(array('url' => 'dashboard/answerComment/' . $comment->id, 'role'=>'form')) }}
+				    	
+									    	{{ Form::textarea('message', '', array('class'=>'form-control', 'placeholder'=>Lang::get('messages.respond'), 'rows'=>'5'))}}
+											
+											<div id="botones">
+												<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-pencil"></span></button>
+											</div>
+
+										{{ Form::close() }}
+									</div>
 
 								</div>
 							
@@ -165,7 +172,13 @@
 	</div>
 
 	<div id="pie" class="navbar">
-		<p> {{ Lang::get('messages.footer1') }} <b><a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a></b> {{ Lang::get('messages.footer2') }}</p>
+		<p> {{ Lang::get('messages.footer1') }} <b><a href="https://www.facebook.com/alvaro.sauci">Alvaro Sauci Valdayo</a></b> {{ Lang::get('messages.footer2') }}
+
+		</p>
+		<p>
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional</a>.
+		</p>
+
 	</div>
 	
 </div>
