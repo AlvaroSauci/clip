@@ -1,8 +1,6 @@
 <?php
 
-
 class LoginController extends BaseController {
-
     /**
      * Instantiate a new UserController instance.
      */
@@ -16,7 +14,6 @@ class LoginController extends BaseController {
 
     public function Check()
     {
-
         $email      = Input::get('email');
         $password   = Input::get('password');
 
@@ -30,8 +27,6 @@ class LoginController extends BaseController {
                 ->with('error_message', Lang::get('messages.error_authentication')) 
                 ->withInput();
          }
-        
-
     }
 
     public function Logout()
@@ -43,8 +38,5 @@ class LoginController extends BaseController {
         return Redirect::route('login')
             ->with('msg', 'Gracias por visitarnos!.');
     }
-
-
 }
-
 ?>

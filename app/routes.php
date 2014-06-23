@@ -11,6 +11,8 @@
 |
 */
 
+// Login-----------------------------------------------------------------------
+
 Route::get('/', array( 'as' => 'login', function()
 {
 	return View::make('login');

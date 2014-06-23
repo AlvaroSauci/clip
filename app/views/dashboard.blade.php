@@ -84,9 +84,6 @@
 
 									</p>
 
-									
-
-
 									<div id="hijos{{$comment->id}}" class="collapse in hijos">
 
 										<hr/>
@@ -107,7 +104,6 @@
 
 														</p>
 
-									
 													</div>
 												</div>
 
